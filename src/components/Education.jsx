@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Caret from "./Caret";
 import Form from "./Form";
+import Header from "./Header";
 
 export default function Education() {
-    const [isExpanded, setExpanded] = useState(true);
+    const [isExpanded, setExpanded] = useState(false);
 
     const toggleExpand = () => {
         setExpanded(!isExpanded);
@@ -15,17 +16,7 @@ export default function Education() {
             flexDirection: 'column',
             justifyContent: 'flex-start'
         }}>
-            <h2 style={{
-                backgroundColor: 'white',
-                padding: '20px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-around'
-             }}>
-                Education
-                <Caret isExpanded={!isExpanded} onClick={toggleExpand}/>
-            </h2>
+            <Header title="Education" isExpanded={isExpanded} toggleExpand={toggleExpand} />
         </div>
     )
 }

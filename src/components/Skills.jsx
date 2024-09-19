@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Form from "./Form";
 import Caret from "./Caret";
+import Header from "./Header";
 
 export default function Skills() {
 
     const [skill, setSkill] = useState('');
     const [skillList, setSkillList] = useState([]);
-    const [isExpanded, setExpanded] = useState('true');
+    const [isExpanded, setExpanded] = useState('false');
 
     const handleAddSkill = () => {
         if (skill.trim()) {
@@ -26,19 +27,7 @@ export default function Skills() {
             flexDirection: 'column',
             justifyContent: 'flex-start'
         }}>
-            <h2
-            style={{
-                backgroundColor: 'white',
-                padding: '20px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-around'
-             }}
-            >
-                Skills
-                <Caret isExpanded={isExpanded} onClick={toggleExpand}></Caret>
-            </h2>
+            <Header title="Skills" isExpanded={isExpanded} toggleExpand={toggleExpand}/>
             {isExpanded && (
             <Form
             label="Skill"

@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import Form from './Form'
 import Caret from './Caret';
+import Header from './Header';
 
 export default function General() {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
-    const [isExpanded, setExpanded] = useState('true');
+    const [isExpanded, setExpanded] = useState('false');
 
     const toggleExpand = () => {
         setExpanded(!isExpanded);
@@ -14,17 +15,7 @@ export default function General() {
 
     return (
         <div>
-            <h2 style={{
-                backgroundColor: 'white',
-                padding: '20px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-around'
-             }}>
-                General Information
-                <Caret  isExpanded={isExpanded} onClick={toggleExpand}></Caret>
-            </h2>
+            <Header title="General Information" isExpanded={isExpanded} toggleExpand={toggleExpand}/>
             {isExpanded && (
             <div>
                 <Form
