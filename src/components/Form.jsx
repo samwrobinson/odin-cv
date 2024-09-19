@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Form({ label, type, name, id, value, onChange }) {
+export default function Form({ label, type, name, id, value, onChange, children }) {
 
     return (
         <div style={{
@@ -10,6 +10,7 @@ export default function Form({ label, type, name, id, value, onChange }) {
         }>
             <label htmlFor={id}>{label}: </label>
             <input type={type} id="firstName" name={name} value={value} onChange={onChange}/>
+            {children}
         </div>
     )
 
