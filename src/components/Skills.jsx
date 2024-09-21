@@ -7,7 +7,7 @@ export default function Skills() {
 
     const [skill, setSkill] = useState('');
     const [skillList, setSkillList] = useState([]);
-    const [isExpanded, setExpanded] = useState('false');
+    const [isExpanded, setExpanded] = useState(false);
 
     const handleAddSkill = () => {
         if (skill.trim()) {

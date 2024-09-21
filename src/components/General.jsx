@@ -7,7 +7,7 @@ export default function General() {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
-    const [isExpanded, setExpanded] = useState('false');
+    const [isExpanded, setExpanded] = useState(false);
 
     const toggleExpand = () => {
         setExpanded(!isExpanded);
